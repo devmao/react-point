@@ -1,6 +1,6 @@
 {
-  "name": "react-point",
-  "version": "3.0.1",
+  "name": "@devmao/react-point",
+  "version": "3.1.0",
   "description": "Fast touch events for React",
   "repository": "ReactTraining/react-point",
   "author": "Michael Jackson",
@@ -19,7 +19,7 @@
     "prepublishOnly": "node ./scripts/build.js",
     "release": "node ./scripts/release.js",
     "lint": "eslint modules",
-    "test": "jest"
+    "test": "jest '*.test.js"
   },
   "peerDependencies": {
     "react": ">=15 || ^16.0.0-rc"

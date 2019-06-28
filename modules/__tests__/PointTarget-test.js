@@ -34,11 +34,16 @@ describe('A <PointTarget>', () => {
   describe('when it is clicked', () => {
     it('calls the onPoint callback', () => {
       let called = false
+      let event
 
-      render(<PointTarget onPoint={() => called = true}/>, node, () => {
+      render(<PointTarget onPoint={(e) => {
+        event = e
+        called = true
+      }}/>, node, () => {
         Simulate.click(node.firstChild)
 
         expect(called).toBe(true)
+        expect(event).not.toBeUndefined()
       })
     })
   })
@@ -46,12 +51,17 @@ describe('A <PointTarget>', () => {
   describe('when it is "tapped"', () => {
     it('calls the onPoint callback', () => {
       let called = false
+      let event
 
-      render(<PointTarget onPoint={() => called = true}/>, node, () => {
+      render(<PointTarget onPoint={(e) => {
+        event = e
+        called = true
+      }}/>, node, () => {
         Simulate.touchStart(node.firstChild, { touches: [ touch(0, 0) ] })
         Simulate.touchEnd(node.firstChild, { touches: [ touch(0, 0) ] })
 
         expect(called).toBe(true)
+        expect(event).not.toBeUndefined()
       })
     })
   })

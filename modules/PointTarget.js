@@ -18,9 +18,9 @@ class PointTarget extends React.Component {
     tolerance: 10
   }
 
-  handleClick = () => {
+  handleClick = (event) => {
     if (!this.usingTouch && this.props.onPoint)
-      this.props.onPoint()
+      this.props.onPoint(event)
   }
 
   handleTouchStart = (event) => {
@@ -50,11 +50,11 @@ class PointTarget extends React.Component {
     this.startX = this.startY = 0
   }
 
-  handleTouchEnd = () => {
+  handleTouchEnd = (event) => {
     this.touchStarted = false
 
     if (!this.touchMoved && this.props.onPoint)
-      this.props.onPoint()
+      this.props.onPoint(event)
   }
 
   componentWillMount() {
