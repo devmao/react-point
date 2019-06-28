@@ -1,5 +1,5 @@
 {
-  "name": "@devmao/react-point",
+  "name": "devmao-react-point",
   "version": "3.1.0",
   "description": "Fast touch events for React",
   "repository": "ReactTraining/react-point",
